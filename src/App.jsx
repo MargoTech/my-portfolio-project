@@ -2,9 +2,11 @@ import { useState } from "react";
 import "./App.css";
 import { LoadingScreen } from "./components/LoadingScreen";
 import "./index.css";
+import { Navbar } from "./components/sections/Navbar";
 
 function App() {
   const [isLoaded, setIsLoaded] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <>
@@ -14,7 +16,9 @@ function App() {
         className={`"min-h-screen transition-opacity duration-700 ${
           isLoaded ? "opacity-100" : "opacity-0"
         } bg-black text-gray-100`}
-      ></div>
+      >
+        <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+      </div>
     </>
   );
 }
