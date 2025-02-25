@@ -1,10 +1,10 @@
 import { useEffect, useRef } from "react";
 
-export const RevealOnScroll = () => {
+export const RevealOnScroll = ({ children }) => {
   const ref = useRef(null);
 
   useEffect(() => {
-    const observed = new IntersectionObserver(
+    const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           ref.current.classList.add("visible");
