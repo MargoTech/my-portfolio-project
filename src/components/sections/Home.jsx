@@ -39,7 +39,7 @@ export const Home = () => {
 
             <a
               href="#contact"
-              className="border border-blue-500/50 text-blue-400 py-3 px-6 rounded font-medium transition-all duration-200 hover:bg-blue-500/10 hover:shadow-[0_0_15px_rgba(59,130,246,0.2)] hover:-translate-y-0.5"
+              className="border border-blue-400 text-blue-400 py-3 px-6 rounded font-medium transition transform hover:bg-blue-500/10 hover:shadow-md hover:-translate-y-0.5"
             >
               Contact Me
             </a>
