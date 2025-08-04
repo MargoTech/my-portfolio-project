@@ -5,7 +5,7 @@ export const LoadingScreen = ({ onComplete }) => {
   const fullText = "<Hello world />";
 
   useEffect(() => {
-    let index = 0;
+    let index = 1;
     const interval = setInterval(() => {
       setText(fullText.substring(0, index));
       index++;
