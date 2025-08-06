@@ -1,13 +1,18 @@
 export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
+  const links = [
+    { href: "#home", label: "Home" },
+    { href: "#about", label: "About" },
+    { href: "#projects", label: "Projects" },
+    { href: "#contact", label: "Contact" },
+  ];
   return (
     <div
-      className={`fixed top-0 left-0 w-full bg-[rgba(10,10,10,0.8)] z-40 flex flex-col items-center justify-center
-        transition-all duration-300 ease-in-out
+      className={`fixed inset-0 z-40 flex flex-col items-center justify-center
+        bg-black/60 backdrop-blur-md transition-all duration-300
         ${
-          menuOpen
-            ? "h-screen opacity-100 pointer-events-auto"
-            : "h-0 opacity-0 pointer-events-none"
-        }`}
+          menuOpen ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"
+        }
+      `}
     >
       <button
         onClick={() => setMenuOpen(false)}
@@ -16,50 +21,21 @@ export const MobileMenu = ({ menuOpen, setMenuOpen }) => {
       >
         &times;
       </button>
-      <a
-        href="#home"
-        onClick={() => setMenuOpen(false)}
-        className={`text-2xl font-semibold text-white my-4 transform transition-transform duration-300
+
+      {links.map(({ href, label }, i) => (
+        <a
+          href="#home"
+          onClick={() => setMenuOpen(false)}
+          className={`text-3xl font-semibold text-white my-3 transition-all duration-300
             ${
-              menuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
+              menuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"
             }
-        `}
-      >
-        Home
-      </a>
-      <a
-        href="#about"
-        onClick={() => setMenuOpen(false)}
-        className={`text-2xl font-semibold text-white my-4 transform transition-transform duration-300
-            ${
-              menuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
-            }
-        `}
-      >
-        About
-      </a>
-      <a
-        href="#projects"
-        onClick={() => setMenuOpen(false)}
-        className={`text-2xl font-semibold text-white my-4 transform transition-transform duration-300
-            ${
-              menuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
-            }
-        `}
-      >
-        Projects
-      </a>
-      <a
-        href="#contact"
-        onClick={() => setMenuOpen(false)}
-        className={`text-2xl font-semibold text-white my-4 transform transition-transform duration-300
-            ${
-              menuOpen ? "opacity-100 translate-y-0" : "opacity-0 translate-y-5"
-            }
-        `}
-      >
-        Contact
-      </a>
+            delay-[${i * 75}ms]
+          `}
+        >
+          {label}
+        </a>
+      ))}
     </div>
   );
 };
