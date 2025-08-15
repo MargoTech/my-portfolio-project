@@ -4,14 +4,14 @@ import { SiTypescript, SiTailwindcss, SiSvelte } from "react-icons/si";
 
 export const About = () => {
   const frontendSkills = [
-    { name: "React", icon: <FaReact /> },
-    { name: "Vue", icon: <FaVuejs /> },
-    { name: "TypeScript", icon: <SiTypescript /> },
-    { name: "TailwindCSS", icon: <SiTailwindcss /> },
-    { name: "Svelte", icon: <SiSvelte /> },
+    { name: "React", icon: FaReact },
+    { name: "Vue", icon: FaVuejs },
+    { name: "TypeScript", icon: SiTypescript },
+    { name: "TailwindCSS", icon: SiTailwindcss },
+    { name: "Svelte", icon: SiSvelte },
   ];
 
-  const backendSkills = [{ name: "Node.js", icon: <FaNodeJs /> }];
+  const backendSkills = [{ name: "Node.js", icon: FaNodeJs }];
 
   return (
     <section
@@ -34,14 +34,14 @@ export const About = () => {
               <div className="rounded-xl p-6 hover:-translate-y-1 transition-all">
                 <h3 className="text-xl font-bold mb-4">Frontend</h3>
                 <div className="flex flex-wrap justify-center gap-2">
-                  {frontendSkills.map((tech, key) => (
+                  {frontendSkills.map(({ name, icon: Icon }, key) => (
                     <span
                       key={key}
                       className="bg-blue-500/10 text-blue-500 py-1 px-3
                       rounded-full text-sm hover:bg-blue-500/20
                       hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition"
                     >
-                      {tech}
+                      <Icon className="text-lg" /> {name}
                     </span>
                   ))}
                 </div>
@@ -51,14 +51,12 @@ export const About = () => {
               <div className="rounded-xl p-6 hover:-translate-y-1 transition-all">
                 <h3 className="text-xl font-bold mb-4"> Backend</h3>
                 <div className="flex flex-wrap justify-center gap-2">
-                  {backendSkills.map((tech, key) => (
+                  {backendSkills.map(({ name, icon: Icon }, key) => (
                     <span
                       key={key}
-                      className="bg-blue-500/10 text-blue-500 py-1 px-3 rounded-full text-sm hover:bg-blue-500/20 
-                                    hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition
-                  "
+                      className="flex items-center gap-2 bg-green-500/10 text-green-400 py-2 px-4 rounded-full text-sm hover:bg-green-500/20 hover:shadow-lg transition"
                     >
-                      {tech}
+                      <Icon className="text-lg" /> {name}
                     </span>
                   ))}
                 </div>
