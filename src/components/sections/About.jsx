@@ -1,15 +1,17 @@
 import { RevealOnScroll } from "../RevealOnScroll";
+import { FaReact, FaVuejs, FaNodeJs } from "react-icons/fa";
+import { SiTypescript, SiTailwindcss, SiSvelte } from "react-icons/si";
 
 export const About = () => {
   const frontendSkills = [
-    "React",
-    "Vue",
-    "TypeScript",
-    "TailwindCSS",
-    "Svelte",
+    { name: "React", icon: <FaReact /> },
+    { name: "Vue", icon: <FaVuejs /> },
+    { name: "TypeScript", icon: <SiTypescript /> },
+    { name: "TailwindCSS", icon: <SiTailwindcss /> },
+    { name: "Svelte", icon: <SiSvelte /> },
   ];
 
-  const backendSkills = ["Node.js"];
+  const backendSkills = [{ name: "Node.js", icon: <FaNodeJs /> }];
 
   return (
     <section
@@ -17,7 +19,7 @@ export const About = () => {
       className="min-h-screen flex items-center justify-center py-20"
     >
       <RevealOnScroll>
-        <div className="max-w-3xl mx-auto px-4">
+        <div className="max-w-3xl mx-auto px-6">
           <h2 className="text-3xl font-bold mb-8 text-center bg-gradient-to-r from-blue-500 to-cyan-400 bg-clip-text text-transparent">
             About Me
           </h2>
