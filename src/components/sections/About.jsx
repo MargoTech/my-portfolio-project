@@ -1,5 +1,5 @@
 import { RevealOnScroll } from "../RevealOnScroll";
-import { FaReact, FaVuejs, FaNodeJs } from "react-icons/fa";
+import { FaReact, FaVuejs, FaNodeJs, FaBriefcase } from "react-icons/fa";
 import { SiTypescript, SiTailwindcss, SiSvelte } from "react-icons/si";
 
 export const About = () => {
@@ -12,6 +12,23 @@ export const About = () => {
   ];
 
   const backendSkills = [{ name: "Node.js", icon: FaNodeJs }];
+
+  const workExperience = [
+    {
+      role: "Frontend Developer (Self-learning / Projects)",
+      company: "Personal Projects",
+      period: "2024 – Present",
+      description:
+        "Building modern web apps with React, experimenting with TailwindCSS, integrating APIs, and deploying projects to GitHub Pages.",
+    },
+    {
+      role: "Intern Web Developer",
+      company: "Freelance Practice",
+      period: "2023 – 2024",
+      description:
+        "Worked on small freelance tasks, built landing pages, and practiced responsive layouts and performance optimization.",
+    },
+  ];
 
   return (
     <section
@@ -96,12 +113,20 @@ export const About = () => {
 
             {/* Work Experience */}
             <div className="p-6 rounded-xl border-white/10 border hover:-translate-y-1 transition-all">
-              <h3 className="text-xl font-bold mb-4">Work Experience</h3>
-              <div>
-                <div>
-                  <h4 className="font-semibold"> </h4>
-                  <p></p>
-                </div>
+              <h3 className="text-xl font-bold mb-4 flex items-center gap-2">
+                <FaBriefcase className="text-blue-400" /> Work Experience
+              </h3>
+              <div className="space-y-6">
+                {workExperience.map((job, index) => (
+                  <div key={index} className="border-l-2 border-blue-500 pl-4">
+                    <h4 className="font-semibold">
+                      {job.role} —{" "}
+                      <span className="text-blue-400">{job.company}</span>
+                    </h4>
+                    <p>{job.period}</p>
+                    <p>{job.description}</p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
