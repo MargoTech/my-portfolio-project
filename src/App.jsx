@@ -4,6 +4,7 @@ import { LoadingScreen } from "./components/LoadingScreen";
 import "./index.css";
 import { Navbar } from "./components/Navbar";
 import { MobileMenu } from "./components/MobileMenu";
+import { Hero } from "./components/sections/Hero";
 import { About } from "./components/sections/About";
 import { Contact } from "./components/sections/Contact";
 import { Projects } from "./components/sections/Projects";
@@ -27,6 +28,10 @@ function App() {
         <main>
           <section id="home">
             <Home />
+          </section>
+
+          <section id="hero">
+            <Hero />
           </section>
 
           <section id="about">
