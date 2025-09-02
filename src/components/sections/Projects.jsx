@@ -29,7 +29,7 @@ const projectsData = [
     title: "Weather App",
     description: "Fetches live weather data & adapts UI by conditions",
     tech: ["React", "API", "Vite", "Tailwind", "Netlify"],
-    demo: "https://6875043a17175878b5ab9ead--forecast-tracker.netlify.app/",
+    demo: "https://68b5baad37fec400084b287b--forecats-app.netlify.app/",
     code: "https://github.com/MargoTech/forecast-js-project",
   },
 
