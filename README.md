@@ -16,14 +16,3 @@ A responsive and animated personal portfolio built with **React**, **Vite**, and
 ---
 
 [Life](https://portfolio-margo.netlify.app/)
-
-
-
-
-
-### 1. Clone the repo
-
-```bash
-git clone https://github.com/margoTech/my-portfolio-vite-project.git
-cd portfolio
-
